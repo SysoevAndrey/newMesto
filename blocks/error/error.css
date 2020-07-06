@@ -1,0 +1,12 @@
+.error {
+  height: 11px;
+  width: 100%;
+  font-size: 12px;
+  line-height: 15px;
+  color: #F00;
+  position: relative;
+  top: 1px;
+  left: 6px;
+  display: block;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,10 @@
+.popup__button_active {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition: .1s linear;
+}
+
+.popup__button_active:hover {
+  opacity: .8;
+}
