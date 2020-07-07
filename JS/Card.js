@@ -1,4 +1,4 @@
-class Card {
+export default class Card {
     constructor(objCard) {
         this.name = objCard.name;
         this.link = objCard.link;
@@ -9,9 +9,13 @@ class Card {
         this.id = objCard.id;
         this.removeCard = objCard.removeCardMethod;
         this.changeLike = objCard.changeLikeMethod;
+        this.like = this.like.bind(this);
+        this.remove = this.remove.bind(this);
+        this.create = this.create.bind(this);
+        this.setEventListeners = this.setEventListeners.bind(this);
     }
 
-    like = () => {
+    like() {
         if (this.buttonLike.classList.contains('place-card__like-icon_liked')) {
             this.changeLike(false, this.id)
                 .then(res => {
@@ -33,7 +37,7 @@ class Card {
         }
     }
 
-    remove = () => {
+    remove() {
         if (window.confirm('Вы действительно хотите удалить эту карточку?')) {
             this.buttonLike.removeEventListener('click', this.like);
             this.cardImage.removeEventListener('click', this.cardPopup);
@@ -43,7 +47,7 @@ class Card {
         }
     }
 
-    create = (pageOwner) => {
+    create(pageOwner) {
         this.cardElement = this._template.querySelector('.place-card').cloneNode(true);
 
         this.cardElement.querySelector('.place-card__name').textContent = this.name;
@@ -69,7 +73,7 @@ class Card {
         return this.cardElement;
     }
 
-    setEventListeners = (pageOwner) => {
+    setEventListeners(pageOwner) {
         this.buttonLike.addEventListener('click', this.like);
 
         this.cardImage.addEventListener('click', this.cardPopup.bind(null, this.link));

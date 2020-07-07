@@ -1,6 +1,14 @@
-class Api {
+export default class Api {
     constructor(options) {
         this.options = options;
+        this.getUserData = this.getUserData.bind(this);
+        this.getInitialCards = this.getInitialCards.bind(this);
+        this.updateUserInfo = this.updateUserInfo.bind(this);
+        this.addCard = this.addCard.bind(this);
+        this.remove = this.remove.bind(this);
+        this.setLikeState = this.setLikeState.bind(this);
+        this.removeLikeState = this.removeLikeState.bind(this);
+        this.setNewAvatar = this.setNewAvatar.bind(this);
     }
 
 
@@ -8,7 +16,7 @@ class Api {
     которая сразу и выполняется и возвращает потом промис (я Вам забыла return написать в образце( ).
     */
 
-    getUserData = () => {
+    getUserData() {
         return fetch(`${this.options.baseUrl}/users/me`, {
             headers: {
                 authorization: this.options.headers.authorization
@@ -23,7 +31,7 @@ class Api {
             });
     }
 
-    getInitialCards = () => {
+    getInitialCards() {
         return fetch(`${this.options.baseUrl}/cards`, {
             headers: {
                 authorization: this.options.headers.authorization
@@ -38,7 +46,7 @@ class Api {
             });
     }
 
-    updateUserInfo = (name, about) => {
+    updateUserInfo(name, about) {
         return fetch(`${this.options.baseUrl}/users/me`, {
             method: 'PATCH',
             headers: {
@@ -57,7 +65,7 @@ class Api {
             });
     }
 
-    addCard = (name, link) => {
+    addCard(name, link) {
         return fetch(`${this.options.baseUrl}/cards`, {
             method: 'POST',
             headers: {
@@ -78,7 +86,7 @@ class Api {
             });
     }
 
-    remove = (id) => {
+    remove(id) {
         return fetch(`${this.options.baseUrl}/cards/${id}`, {
             method: 'DELETE',
             headers: {
@@ -93,7 +101,7 @@ class Api {
             });
     }
 
-    setLikeState = (id) => {
+    setLikeState(id) {
         return fetch(`${this.options.baseUrl}/cards/like/${id}`, {
             method: 'PUT',
             headers: {
@@ -109,7 +117,7 @@ class Api {
             });
     }
 
-    removeLikeState = (id) => {
+    removeLikeState(id) {
         return fetch(`${this.options.baseUrl}/cards/like/${id}`, {
             method: 'DELETE',
             headers: {
@@ -125,7 +133,7 @@ class Api {
             });
     }
 
-    setNewAvatar = (link) => {
+    setNewAvatar(link) {
         return fetch(`${this.options.baseUrl}/users/me/avatar`, {
             method: 'PATCH',
             headers: {

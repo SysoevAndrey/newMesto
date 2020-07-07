@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mesto</title>
-  <link rel="stylesheet" href="./pages/index.css">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
 
 <body>
   <div class="root">
     <header class="header root__section">
-      <img src="./images/logo.svg" alt="mesto logo" class="logo">
+      <img src="<%=require('./images/logo.svg') %>" alt="mesto logo" class="logo">
     </header>
     <div class="profile root__section">
       <div class="user-info">
@@ -28,7 +28,7 @@
     <div class="places-list root__section"></div>
     <div class="popup add-popup">
       <div class="popup__content add-popup__content">
-        <img src="./images/close.svg" alt="" class="popup__close add-popup__close">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close add-popup__close">
         <h3 class="popup__title add-popup__title">Новое место</h3>
         <form class="popup__form add-popup__form" name="add" novalidate>
           <input type="text" id="add-name" name="name" class="popup__input add-popup__input_type_name"
@@ -44,7 +44,7 @@
 
     <div class="popup edit-popup">
       <div class="popup__content edit-popup__content">
-        <img src="./images/close.svg" alt="" class="popup__close edit-popup__close">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close edit-popup__close">
         <h3 class="popup__title edit-popup__title">Редактировать профиль</h3>
         <form class="popup__form edit-popup__form" name="edit" novalidate>
           <input type="text" id="edit-name" name="name" class="popup__input edit-popup__input_type_name"
@@ -60,7 +60,7 @@
 
     <div class="popup avatar-popup">
       <div class="popup__content avatar-popup__content">
-        <img src="./images/close.svg" alt="" class="popup__close avatar-popup__close">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close avatar-popup__close">
         <h3 class="popup__title avatar-popup__title">Обновить аватар</h3>
         <form class="popup__form avatar-popup__form" name="edit" novalidate>
           <input type="url" id="avatar-link" name="link" class="popup__input avatar-popup__input_type_link-url"
@@ -74,7 +74,7 @@
     <div class="popup card-popup">
       <div class="card-popup__content">
         <img src="" class="card-popup__image" alt="">
-        <img src="./images/close.svg" alt="" class="popup__close card-popup__close">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close card-popup__close">
       </div>
     </div>
   </div>
@@ -94,14 +94,7 @@
     </div>
   </template>
 
-  <script src="./JS/Api.js"></script>
-  <script src="./JS/Card.js"></script>
-  <script src="./JS/CardList.js"></script>
-  <script src="./JS/Popup.js"></script>
-  <script src="./JS/CardPopup.js"></script>
-  <script src="./JS/UserInfo.js"></script>
-  <script src="./JS/FormValidator.js"></script>
-  <script src="./JS/script.js"></script>
+  <script src="<%= htmlWebpackPlugin.files.js %>"></script>
 </body>
 
 </html>

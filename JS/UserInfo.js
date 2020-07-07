@@ -1,10 +1,10 @@
-class UserInfo {
-    setUserInfo = (name, desc) => {
+export default class UserInfo {
+    setUserInfo(name, desc) {
         this.name = name;
         this.desc = desc;
     }
 
-    updateUserInfo = (resultName, resultDesc) => {
+    updateUserInfo(resultName, resultDesc) {
         this.resultName = resultName;
         this.resultDesc = resultDesc;
 

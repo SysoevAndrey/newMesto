@@ -1,11 +1,17 @@
-class FormValidator {
+export default class FormValidator {
     constructor(form, errorMessages, formSelectors) {
         this.form = form;
         this.errorMessages = errorMessages;
         this.formSelectors = formSelectors;
+        this.isValidate = this.isValidate.bind(this);
+        this.checkInputValidity = this.checkInputValidity.bind(this);
+        this.setSubmitButtonState = this.setSubmitButtonState.bind(this);
+        this.handleInputForm = this.handleInputForm.bind(this);
+        this.hideErrors = this.hideErrors.bind(this);
+        this.setEventListeners = this.setEventListeners.bind(this);
     }
 
-    isValidate = (input) => {
+    isValidate(input) {
         input.setCustomValidity('');
         if (input.validity.valueMissing) {
             input.setCustomValidity(this.errorMessages.valueMissing);
@@ -25,8 +31,7 @@ class FormValidator {
         return input.checkValidity();
     }
 
-    checkInputValidity = (input) => {
-        // Отлично!!
+    checkInputValidity(input) {
         const errorMessage = this.errorElements[input.id];
 
         const valid = this.isValidate(input);
@@ -35,7 +40,7 @@ class FormValidator {
         return valid;
     }
 
-    setSubmitButtonState = (isValid) => {
+    setSubmitButtonState(isValid) {
         if (isValid) {
             this.button.classList.add(this.formSelectors.buttonActive);
             this.button.removeAttribute('disabled');
@@ -45,7 +50,7 @@ class FormValidator {
         }
     }
 
-    handleInputForm = (evt) => {
+    handleInputForm(evt) {
         this.checkInputValidity(evt.target);
 
         if (this.inputs.every(this.isValidate)) {
@@ -56,11 +61,11 @@ class FormValidator {
         this.setSubmitButtonState(this.isValid);
     }
 
-    hideErrors = () => {
+    hideErrors() {
         Object.values(this.errorElements).forEach((error) => error.textContent = '');
     }
 
-    setEventListeners = () => {
+    setEventListeners() {
 
         this.inputs = [...this.form.querySelectorAll(this.formSelectors.input)];
 

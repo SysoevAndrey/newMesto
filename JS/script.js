@@ -1,3 +1,12 @@
+import "../pages/index.css";
+import Api from "./Api.js";
+import Card from "./Card.js";
+import CardList from "./CardList.js";
+import Popup from "./Popup.js";
+import CardPopup from "./CardPopup.js";
+import FormValidator from "./FormValidator.js";
+import UserInfo from "./UserInfo.js";
+
 (function () {
     const errorMessages = {
         valueMissing: 'Это обязательное поле',
