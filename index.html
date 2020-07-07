@@ -12,7 +12,7 @@
 <body>
   <div class="root">
     <header class="header root__section">
-      <img src="<%=require('./images/logo.svg') %>" alt="mesto logo" class="logo">
+      <img src="<%=require('./images/logo.svg').default %>" alt="mesto logo" class="logo">
     </header>
     <div class="profile root__section">
       <div class="user-info">
@@ -28,7 +28,7 @@
     <div class="places-list root__section"></div>
     <div class="popup add-popup">
       <div class="popup__content add-popup__content">
-        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close add-popup__close">
+        <img src="<%=require('./images/close.svg').default %>" alt="" class="popup__close add-popup__close">
         <h3 class="popup__title add-popup__title">Новое место</h3>
         <form class="popup__form add-popup__form" name="add" novalidate>
           <input type="text" id="add-name" name="name" class="popup__input add-popup__input_type_name"
@@ -44,7 +44,7 @@
 
     <div class="popup edit-popup">
       <div class="popup__content edit-popup__content">
-        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close edit-popup__close">
+        <img src="<%=require('./images/close.svg').default %>" alt="" class="popup__close edit-popup__close">
         <h3 class="popup__title edit-popup__title">Редактировать профиль</h3>
         <form class="popup__form edit-popup__form" name="edit" novalidate>
           <input type="text" id="edit-name" name="name" class="popup__input edit-popup__input_type_name"
@@ -60,7 +60,7 @@
 
     <div class="popup avatar-popup">
       <div class="popup__content avatar-popup__content">
-        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close avatar-popup__close">
+        <img src="<%=require('./images/close.svg').default %>" alt="" class="popup__close avatar-popup__close">
         <h3 class="popup__title avatar-popup__title">Обновить аватар</h3>
         <form class="popup__form avatar-popup__form" name="edit" novalidate>
           <input type="url" id="avatar-link" name="link" class="popup__input avatar-popup__input_type_link-url"
@@ -74,7 +74,7 @@
     <div class="popup card-popup">
       <div class="card-popup__content">
         <img src="" class="card-popup__image" alt="">
-        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close card-popup__close">
+        <img src="<%=require('./images/close.svg').default %>" alt="" class="popup__close card-popup__close">
       </div>
     </div>
   </div>

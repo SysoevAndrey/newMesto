@@ -19,22 +19,21 @@ module.exports = {
             use: { loader: "babel-loader" },
             exclude: /node_modules/
         },
-        // {
-        //     test: /\.css$/,
-        //     use: [MiniCssExtractPlugin.loader, 'css-loader']
-        // },
         {
             test: /\.(png|jpe?g|gif)$/i,
             use: [
                 {
                     loader: 'file-loader',
+                    options: {
+                        esModule: false,
+                    }
                 },
             ],
         },
         {
-            test: /\.(png|jpg|gif|ico|svg)$/,
+            test: /\.(png|jpe?g|gif|ico|svg)$/,
             use: [
-                'file-loader?name=../images/[name].[ext]', // указали папку, куда складывать изображения
+                'file-loader?name=../images/[name].[ext]',
                 {
                     loader: 'image-webpack-loader',
                     options: {}
