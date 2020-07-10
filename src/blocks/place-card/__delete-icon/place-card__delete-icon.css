@@ -9,8 +9,10 @@
   right: 15px;
   cursor: pointer;
   display: none;
+  outline: none;
+  transition: .1s linear;
 }
 
-/* .place-card:hover .place-card__delete-icon {
-  display: block;
-} */
+.place-card__delete-icon:hover {
+  opacity: .8;
+}
