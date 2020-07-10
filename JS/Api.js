@@ -11,11 +11,6 @@ export default class Api {
         this.setNewAvatar = this.setNewAvatar.bind(this);
     }
 
-
-    /*REVIEW2. Правильно, что Вы написали инструкцию return перед fetch в методах Api, нужно возвращать всю конструкцию с fetch и then,
-    которая сразу и выполняется и возвращает потом промис (я Вам забыла return написать в образце( ).
-    */
-
     getUserData() {
         return fetch(`${this.options.baseUrl}/users/me`, {
             headers: {

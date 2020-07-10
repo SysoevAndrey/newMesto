@@ -2,7 +2,6 @@ import Popup from "./Popup.js";
 export default class CardPopup extends Popup {
     constructor(popup, preparation, closeButton, openButton) {
         super(popup, preparation, closeButton, openButton = null);
-        // this.open = this.open.bind(this);
         this.setEventListeners = this.setEventListeners.bind(this);
     }
 
