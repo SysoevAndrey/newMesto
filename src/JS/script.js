@@ -14,7 +14,7 @@ import UserInfo from "./UserInfo.js";
         typeMismatch: 'Здесь должна быть ссылка'
     };
     
-    const url = process.env.NODE_ENV === 'development' ? 'http://praktikum.tk/cohort11' : 'https://praktikum.tk/cohort11';
+    const url = NODE_ENV === 'development' ? 'http://praktikum.tk/cohort11' : 'https://praktikum.tk/cohort11';
 
     const formSelectors = {
         button: '.button',
