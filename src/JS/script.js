@@ -13,7 +13,8 @@ import UserInfo from "./UserInfo.js";
         tooShort: 'Должно быть от 2 до 30 символов',
         typeMismatch: 'Здесь должна быть ссылка'
     };
-    
+    console.log(NODE_ENV);
+    console.log(process.env.NODE_ENV);
     const url = NODE_ENV === 'development' ? 'http://praktikum.tk/cohort11' : 'https://praktikum.tk/cohort11';
 
     const formSelectors = {
