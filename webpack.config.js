@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const FontminPlugin = require('fontmin-webpack');
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -55,7 +56,7 @@ module.exports = {
                         importLoaders: 2
                     }
                 },
-                'postcss-loader'
+                    'postcss-loader'
             ]
         },
         ]
@@ -80,10 +81,14 @@ module.exports = {
             canPrint: true
         }),
         new ImageminPlugin({
-            disable: process.env.NODE_ENV !== 'production', // Disable during development
+            disable: process.env.NODE_ENV !== 'production',
             pngquant: {
                 quality: '95-100'
             }
+        }),
+        new FontminPlugin({
+            autodetect: true,
+            glyphs: ['\uf0c8']
         })
     ]
 };
