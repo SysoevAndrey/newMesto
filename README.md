@@ -5,15 +5,15 @@ It is a kind of social network. You can choose your nickname and avatar, like pi
 
 To build the project:
 
-  *Clone repo ```git clone ...```
+  * Clone repo ```git clone ...```
 
-  *Initialisation ```npm i```
+  * Initialisation ```npm i```
 
-  *Development mode ```npm run dev```
+  * Development mode ```npm run dev```
 
-  *Production build ```npm run build```
+  * Production build ```npm run build```
 
-  *Publish on gh-pages ```npm run deploy```
+  * Publish on gh-pages ```npm run deploy```
 
 The result is available by [link](https://sysoevandrey.github.io/newMesto/).
 
