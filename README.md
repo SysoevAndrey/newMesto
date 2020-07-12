@@ -7,7 +7,7 @@ To build the project:
 
   * Clone repo ```git clone ...```
 
-  * Initialisation ```npm i```
+  * Initialisation ```npm init```
 
   * Development mode ```npm run dev```
 
